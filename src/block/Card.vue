@@ -1,7 +1,7 @@
 <template>
   <div class="Cardblock">
         <div class="rowbox" v-for="item in 12" :key="item">
-            <cardcomponents :src="'https://picsum.photos/500/300?' + item" time="2021-1200" msg="哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈"></cardcomponents>
+            <cardcomponents :src="'https://picsum.photos/500/300?' + item" time="2021-1200" msg="哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈"></cardcomponents>
         </div>
   </div>
 </template>

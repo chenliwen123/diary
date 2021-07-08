@@ -50,6 +50,11 @@ export default {
         opacity:0;
         transition: all 0.3s;
         margin-top:15px;
+        overflow : hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
     }
     &:hover .cardimg{
         filter: blur(3px);

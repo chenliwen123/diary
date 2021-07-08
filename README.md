@@ -1,24 +1,11 @@
-# diary
+# 留言板    
 
-## Project setup
-```
-yarn install
-```
+> 为什么要这么做呢？
+> + 我喜欢留言 总喜欢给之后的自己写点东西
+> + 我在微博上写了留言 但是不知道什么原因丢了一条
+这对我来说是非常重要的，竟然丢了一条
+> + 我索性就当练习技术，来写一个留言板
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## 这是vue3的留言板
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+> 后台用的是 nest 源码也在我的项目里面
