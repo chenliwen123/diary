@@ -2,12 +2,13 @@
     <div class="Diarylist">
         <div class="Diarylist_title">留言板</div>
         <ul class="Diarylist_ul">
-            <li>
+            <li v-for="(item,index) in datalist" :key="index">
                 <div class="left">
                     <img src="https://picsum.photos/250/150" alt="">
                 </div>
                 <div class="right">
-                    <p>哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈哇哈哈哈哈哈哈哈</p>
+                    <p class="content">{{item.content}}</p>
+                    <p class="time">{{item.time}}</p>
                 </div>
             </li>
         </ul>
@@ -25,13 +26,26 @@ export default {
     name:'Diarylist',
     data(){
         return {
-            total:1000
+            total:1000,
+            size:10,
+            currentPage:1,
+            datalist:[
+                {content:'你好我是留言板',time:'2021-07-09 14:12:17'}
+            ]
         }
     },
     methods:{
-        currentchange(){
+        currentchange(val){
+            this.currentPage = val
+            this.getdiarylist();
+        },
+        /**@function 获取留言板列表 */
+        getdiarylist(){
 
         }
+    },
+    mounted(){
+        this.getdiarylist()
     }
 }
 </script>
@@ -66,11 +80,17 @@ export default {
             .right{
                 margin-left: 30px;
                 width: calc(100% - 280px);
-                p{
+                p.content{
                     margin:0;
                     padding:0;
-                    text-align: left;
                     text-indent:2em;
+                    text-align: left;
+                }
+                p.time{
+                    color:#909399;
+                    margin-top:15px;
+                    margin-right: 20px;
+                    text-align: right;
                 }
             }
         }
