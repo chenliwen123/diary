@@ -1,8 +1,6 @@
 <template>
     <div class="Adddata">
-        <el-affix position="bottom" :offset="70">
-            <el-button circle type="primary" icon="el-icon-plus" @click="showdialog"></el-button>
-        </el-affix>
+        <el-button class="addshowdialog" circle type="primary" icon="el-icon-plus" @click="showdialog"></el-button>
         <el-dialog title="留言内容" v-model="dialogFormVisible">
             <el-form :model="form">
                 <el-form-item label="" :label-width="0">
@@ -51,11 +49,9 @@ export default {
 </script>
 
 <style lang="scss">
-.el-affix--fixed{
+.addshowdialog{
+    position: fixed;
+    bottom:50px;
     right:70px;
-}
-.el-affix{
-    width:0;
-    height:0;
 }
 </style>

@@ -37,13 +37,6 @@ module.exports = {
             }
         }
     },
-    // css: {
-    //     loaderOptions: {
-    //         scss: {
-    //             prependData: `@import "~@/assets/css/common.scss";`,
-    //         },
-    //     }
-    // },
     productionSourceMap: false,
     publicPath: "/",
     lintOnSave: false, // 临时关闭eslint
