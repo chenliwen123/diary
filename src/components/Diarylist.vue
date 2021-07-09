@@ -2,9 +2,9 @@
     <div class="Diarylist">
         <div class="Diarylist_title">留言板</div>
         <ul class="Diarylist_ul">
-            <li v-for="(item,index) in datalist" :key="index">
+            <li v-for="(item,index) in data" :key="index">
                 <div class="left">
-                    <img src="https://picsum.photos/250/150" alt="">
+                    <img :src="'https://picsum.photos/250/150?' + index" alt="">
                 </div>
                 <div class="right">
                     <p class="content">{{item.content}}</p>
@@ -24,14 +24,20 @@
 <script>
 export default {
     name:'Diarylist',
+    props:{
+        data:{
+            type:Array,
+            default:() =>{
+                return []
+            }
+        }
+    },
     data(){
         return {
             total:1000,
             size:10,
             currentPage:1,
-            datalist:[
-                {content:'你好我是留言板',time:'2021-07-09 14:12:17'}
-            ]
+            
         }
     },
     methods:{

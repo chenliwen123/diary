@@ -5,7 +5,7 @@ import axios from "axios";
 //   if (r != null) return unescape(r[2]);
 //   return null;
 // }
-let baseURL = "api/";
+let baseURL = "/api";
 // if (getQueryString("ip") == 1) {
 //   baseURL = "http://123.56.85.24:5000/api/";
 // } else if (getQueryString("ip") == 2) {

@@ -1,6 +1,6 @@
 <template>
   <div class="listblock">
-      <Diarylist></Diarylist>
+      <Diarylist :data="data"></Diarylist>
   </div>
 </template>
 
@@ -17,10 +17,23 @@ export default {
             defalut:0
         }
     },
+    data(){
+        return{
+            data:[]
+        }
+    },
     methods:{
         addnum(){
             this.$emit('update:num',this.num + 1)
+        },
+        getlisedata(){
+            this.$axios.get('/diray/findAll').then( res => {
+                this.data = res
+            })
         }
+    },
+    mounted(){
+        this.getlisedata();
     }
 }
 </script>
