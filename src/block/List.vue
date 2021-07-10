@@ -28,7 +28,7 @@ export default {
         },
         getlisedata(){
             this.$axios.get('/diray/findAll').then( res => {
-                this.data = res
+                this.data = res.data
             })
         }
     },

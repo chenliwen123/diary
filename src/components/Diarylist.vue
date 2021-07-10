@@ -8,7 +8,7 @@
         </div>
         <div class="right">
           <p class="content">{{ item.content }}</p>
-          <p class="time">{{ item.time }}</p>
+          <p class="time">{{filtertime(item.time)}}</p>
         </div>
       </li>
     </ul>
@@ -47,6 +47,10 @@ export default {
     },
     /**@function 获取留言板列表 */
     getdiarylist() {},
+    /**@function 时间方法 */
+    filtertime(value){
+      return new Date(Number(value)).Format('yyyy-MM-dd hh:MM:ss')
+    }
   },
   mounted() {
     this.getdiarylist();
@@ -95,6 +99,7 @@ export default {
           margin-top: 15px;
           margin-right: 20px;
           text-align: right;
+          font-size:14px;
         }
       }
     }

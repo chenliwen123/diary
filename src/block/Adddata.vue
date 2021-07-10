@@ -39,7 +39,15 @@ export default {
         },
         /**@function 保存数据 */
         save(){
-            
+            const self = this;
+            let params = {
+                user:'哈哈哈哈',
+                content:'噢噢噢噢哦哦哦哦哦哦哦哦哦哦哦哦哦哦哦哦哦哦',
+                time:new Date().getTime()
+            }
+            this.$axios.post('diray/create',params).then( res => {
+                debugger
+            })
         }
     },
     mounted(){
