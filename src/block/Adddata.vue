@@ -41,12 +41,17 @@ export default {
         save(){
             const self = this;
             let params = {
-                user:'哈哈哈哈',
-                content:'噢噢噢噢哦哦哦哦哦哦哦哦哦哦哦哦哦哦哦哦哦哦',
+                user:'陈立文',    
+                content:this.form.content,
                 time:new Date().getTime()
             }
             this.$axios.post('diray/create',params).then( res => {
-                debugger
+                if(res.status == 200){
+                    this.$message({
+                        type:'success',
+                        message:res.message
+                    })
+                }
             })
         }
     },

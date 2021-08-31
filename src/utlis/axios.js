@@ -35,11 +35,11 @@ service.interceptors.response.use(
   response => {
     const res = response.data;
 
-    if (response.status !== 200) {
-      return Promise.reject(new Error(res.message || "Error"));
-    } else {
+    // if (response.status !== 200) {
+      // return Promise.reject(new Error(res.message || "Error"));
+    // } else {
       return res;
-    }
+    // }
   },
   error => {
     console.log("err" + error); // for debug
